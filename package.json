@@ -1,7 +1,7 @@
 {
   "name": "suryanamaskar",
   "version": "2.0.0",
-  "homepage": "https://vidgi.github.io/suryanamaskar",
+  "homepage": "https://vidgi.github.io/suryanamaskar2",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.0",
