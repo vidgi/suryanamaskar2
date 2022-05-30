@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Chakra+Petch:500&display=swap");
+
+body {
+  color: white;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* line-height: 50%; */
+}
+
+.App {
+  /* text-align: center; */
+  font-family: Chakra Petch, sans-serif;
+}
