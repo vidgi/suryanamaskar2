@@ -277,8 +277,8 @@ function App() {
         </Modal>
 
         <Canvas dpr={[1, 2]} style={{ height: "100vh", width: "100vw" }}>
-          <Sky sunPosition={[100, 20, 100]} inclination={0} azimuth={0.25} />
           <Suspense fallback={null}>
+            <Sky sunPosition={[100, 20, 100]} inclination={0} azimuth={0.25} />
             <Cloud
               opacity={0.3}
               speed={0.2} // Rotation speed
