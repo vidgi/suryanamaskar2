@@ -1,11 +1,14 @@
 import "./App.css";
 
-import React, { Suspense, useRef, useState } from "react";
-import * as THREE from "three";
+import React, { Suspense } from "react";
+// import { useRef, useState } from "react";
+
+// import * as THREE from "three";
 import Model from "./components/Model";
 import FlareIcon from "@mui/icons-material/Flare";
 import VidyaIcon from "@mui/icons-material/AutoAwesome";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { Leva, useControls } from "leva";
 
 import {
   Button,
@@ -126,14 +129,28 @@ function getTimeCalc() {
 }
 
 function App() {
-  const { nodes, materials } = useGLTF(typeexample);
+  const { nodes } = useGLTF(typeexample);
   const [entered, setEntered] = React.useState(false);
   const [showAbout, setShowAbout] = React.useState(false);
   const handleOpen = () => setShowAbout(!showAbout);
   const handleClose = () => setShowAbout(false);
 
+  // const config = useControls({
+  //   turbidity: { value: 5, min: 0.1, max: 100, step: 0.1 },
+  //   rayleigh: { value: 1, min: 1, max: 20, step: 1 },
+  //   mieCoefficient: { value: 0.01, min: 0, max: 1, step: 0.005 },
+  //   mieDirectionalG: { value: 0.8, min: 0, max: 10, step: 0.1 },
+  //   inclination: { value: 2, min: 0.1, max: 10, step: 0.01 },
+  //   azimuth: { value: 0.25, min: 0.1, max: 1, step: 0.01 },
+  //   sunPosition: {
+  //     value: [100, 20, 100],
+  //     step: 1000,
+  //   },
+  // });
+
   return (
     <div className="App">
+      {/* <Leva titleBar={false} /> */}
       <ThemeProvider theme={theme}>
         <div
           style={{
@@ -177,7 +194,11 @@ function App() {
           }}
         >
           <Tooltip title="vidya's website">
-            <Button href="https://vidyagiri.com">
+            <Button
+              target="_blank"
+              rel="noreferrer"
+              href="https://vidyagiri.com"
+            >
               <VidyaIcon />
             </Button>
           </Tooltip>
@@ -260,16 +281,62 @@ function App() {
                 </Typography>
                 <br></br>
                 <Typography variant="caption" component="div">
-                  created by <a href="https://www.vidyagiri.com">Vidya Giri</a>{" "}
-                  using <a href="https://reactjs.org/">react</a>,{" "}
-                  <a href="https://threejs.org/">three.js</a>,{" "}
-                  <a href="https://github.com/pmndrs/react-three-fiber">
+                  created by{" "}
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.vidyagiri.com"
+                  >
+                    Vidya Giri
+                  </a>{" "}
+                  using{" "}
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://reactjs.org/"
+                  >
+                    react
+                  </a>
+                  ,{" "}
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://threejs.org/"
+                  >
+                    three.js
+                  </a>
+                  ,{" "}
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://github.com/pmndrs/react-three-fiber"
+                  >
                     react-three-fiber
                   </a>
-                  ,<a href="https://github.com/pmndrs/drei">drei</a>,{" "}
-                  <a href="https://plask.ai/">plask</a>,{" "}
-                  <a href="https://www.blender.org/">blender</a>, and{" "}
-                  <a href="https://mui.com/">mui</a>{" "}
+                  ,
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://github.com/pmndrs/drei"
+                  >
+                    drei
+                  </a>
+                  ,{" "}
+                  <a target="_blank" rel="noreferrer" href="https://plask.ai/">
+                    plask
+                  </a>
+                  ,{" "}
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.blender.org/"
+                  >
+                    blender
+                  </a>
+                  , and{" "}
+                  <a target="_blank" rel="noreferrer" href="https://mui.com/">
+                    mui
+                  </a>{" "}
                 </Typography>
               </CardContent>
             </Card>
@@ -278,6 +345,7 @@ function App() {
 
         <Canvas dpr={[1, 2]} style={{ height: "100vh", width: "100vw" }}>
           <Suspense fallback={null}>
+            {/* <Sky {...config} /> */}
             <Sky sunPosition={[100, 20, 100]} inclination={0} azimuth={0.25} />
             <Cloud
               opacity={0.3}
@@ -289,9 +357,6 @@ function App() {
             <GizmoHelper
               alignment="top-right" // widget alignment within scene
               margin={[80, 80]} // widget margins (X, Y)
-              // onUpdate={/* called during camera animation  */}
-              // onTarget={/* return current camera target (e.g. from orbit controls) to center animation */}
-              // renderPriority={/* use renderPriority to prevent the helper from disappearing if there is another useFrame(..., 1)*/}
             >
               <GizmoViewport
                 axisColors={[
@@ -326,9 +391,18 @@ function App() {
             <pointLight position={[10, -10, 10]} />
 
             {!entered && (
+              <>
+                <pointLight position={[10, -10, 10]} />
+                <pointLight position={[10, -10, 10]} />
+                <pointLight position={[10, -10, 10]} />
+                <pointLight position={[10, -10, 10]} />
+              </>
+            )}
+
+            {!entered && (
               <Float
                 speed={2} // Animation speed, defaults to 1
-                rotationIntensity={0.5} // XYZ rotation intensity, defaults to 1
+                rotationIntensity={1} // XYZ rotation intensity, defaults to 1
                 floatIntensity={0.25} // Up/down float intensity, defaults to 1
               >
                 <group
@@ -344,10 +418,10 @@ function App() {
                     <meshStandardMaterial
                       attach="material"
                       wireframe={false}
-                      color={"#ebc634"}
+                      color={"#f3b64d"}
                       flatShading={true}
-                      roughness={0.25}
-                      metalness={0.99}
+                      roughness={0.3}
+                      metalness={0.95}
                     />
                   </mesh>
                 </group>
