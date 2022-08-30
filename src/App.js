@@ -10,27 +10,11 @@ import VidyaIcon from "@mui/icons-material/AutoAwesome";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 // import { Leva, useControls } from "leva";
 
-import {
-  Button,
-  Tooltip,
-  Card,
-  CardContent,
-  Typography,
-  Modal,
-  ToggleButton,
-} from "@mui/material";
+import { Button, Tooltip, Card, CardContent, Typography, Modal, ToggleButton } from "@mui/material";
 
+import { Cloud } from "./Cloud.js";
 import { Canvas } from "@react-three/fiber";
-import {
-  useGLTF,
-  Float,
-  GizmoHelper,
-  GizmoViewport,
-  Cloud,
-  Loader,
-  Sky,
-  OrbitControls,
-} from "@react-three/drei";
+import { useGLTF, Float, GizmoHelper, GizmoViewport, Loader, Sky, OrbitControls } from "@react-three/drei";
 import typeexample from "./title.glb";
 import figure from "./MannequinGold.glb";
 
@@ -161,12 +145,7 @@ function App() {
           }}
         >
           <Tooltip title="about the project">
-            <ToggleButton
-              value={showAbout}
-              color="primary"
-              selected={showAbout}
-              onClick={handleOpen}
-            >
+            <ToggleButton value={showAbout} color="primary" selected={showAbout} onClick={handleOpen}>
               <FlareIcon />
             </ToggleButton>
           </Tooltip>
@@ -194,11 +173,7 @@ function App() {
           }}
         >
           <Tooltip title="vidya's website">
-            <Button
-              target="_blank"
-              rel="noreferrer"
-              href="https://vidyagiri.com"
-            >
+            <Button target="_blank" rel="noreferrer" href="https://vidyagiri.com">
               <VidyaIcon />
             </Button>
           </Tooltip>
@@ -230,12 +205,7 @@ function App() {
           )}
         </div>
 
-        <Modal
-          open={showAbout}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
+        <Modal open={showAbout} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
           <div
             style={{
               overflow: "scroll",
@@ -258,67 +228,40 @@ function App() {
                 <br />
 
                 <Typography variant="caption" component="div">
-                  suryanamaskar is a time-based digital sculpture that
-                  coordinates movements of the revered suryanamaskar sequence to
-                  the solar day.
+                  suryanamaskar is a time-based digital sculpture that coordinates movements of the revered suryanamaskar sequence to the
+                  solar day.
                   <br></br>
                   <br></br>
-                  The origin of the word suryanamaskar (सूर्यनमस्कार) is
-                  Sanskrit, consisting of सूर्य (Sūrya) which means 'sun' and
-                  नमस्कार (Namaskāra) which means 'greeting' or 'salute'. The
-                  connected set of asanas, or poses, are performed as a part of
-                  modern yoga practices where attention is places in the flow of
-                  the movements and corresponding inhales and exhales.
+                  The origin of the word suryanamaskar (सूर्यनमस्कार) is Sanskrit, consisting of सूर्य (Sūrya) which means 'sun' and नमस्कार
+                  (Namaskāra) which means 'greeting' or 'salute'. The connected set of asanas, or poses, are performed as a part of modern
+                  yoga practices where attention is places in the flow of the movements and corresponding inhales and exhales.
                   <br></br>
                   <br></br>
-                  This project connects the cyclical sequence of the 12 asanas
-                  to our circular system of the solar day where the sequence
-                  repeats once per hour and 24 times per day, and continues on
-                  with the progression of time. The piece is thus connecting the
-                  depicted virtual body to the physical movement of
-                  suryanamaskar, allowing the body to finding connection with
-                  the physical world and the sun, just as we can.
+                  This project connects the cyclical sequence of the 12 asanas to our circular system of the solar day where the sequence
+                  repeats once per hour and 24 times per day, and continues on with the progression of time. The piece is thus connecting
+                  the depicted virtual body to the physical movement of suryanamaskar, allowing the body to finding connection with the
+                  physical world and the sun, just as we can.
                 </Typography>
                 <br></br>
                 <Typography variant="caption" component="div">
                   created by{" "}
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.vidyagiri.com"
-                  >
+                  <a target="_blank" rel="noreferrer" href="https://www.vidyagiri.com">
                     Vidya Giri
                   </a>{" "}
                   using{" "}
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://reactjs.org/"
-                  >
+                  <a target="_blank" rel="noreferrer" href="https://reactjs.org/">
                     react
                   </a>
                   ,{" "}
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://threejs.org/"
-                  >
+                  <a target="_blank" rel="noreferrer" href="https://threejs.org/">
                     three.js
                   </a>
                   ,{" "}
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://github.com/pmndrs/react-three-fiber"
-                  >
+                  <a target="_blank" rel="noreferrer" href="https://github.com/pmndrs/react-three-fiber">
                     react-three-fiber
                   </a>
                   ,
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://github.com/pmndrs/drei"
-                  >
+                  <a target="_blank" rel="noreferrer" href="https://github.com/pmndrs/drei">
                     drei
                   </a>
                   ,{" "}
@@ -326,11 +269,7 @@ function App() {
                     plask
                   </a>
                   ,{" "}
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.blender.org/"
-                  >
+                  <a target="_blank" rel="noreferrer" href="https://www.blender.org/">
                     blender
                   </a>
                   , and{" "}
@@ -359,11 +298,7 @@ function App() {
               margin={[80, 80]} // widget margins (X, Y)
             >
               <GizmoViewport
-                axisColors={[
-                  "rgba(255, 187, 0, 1)",
-                  "rgba(220, 200, 0, 1)",
-                  "rgba(255, 220, 0, 1)",
-                ]}
+                axisColors={["rgba(255, 187, 0, 1)", "rgba(220, 200, 0, 1)", "rgba(255, 220, 0, 1)"]}
                 labelColor="gray"
                 hoverColor="black"
               />
@@ -375,12 +310,7 @@ function App() {
                 rotationIntensity={0.01} // XYZ rotation intensity, defaults to 1
                 floatIntensity={0.5} // Up/down float intensity, defaults to 1
               >
-                <Model
-                  path={figure}
-                  time={getTimeCalc()[3]}
-                  position={[0, -0.4, -0.1]}
-                  scale={0.25}
-                />
+                <Model path={figure} time={getTimeCalc()[3]} position={[0, -0.4, -0.1]} scale={0.25} />
               </Float>
             )}
 
@@ -405,16 +335,8 @@ function App() {
                 rotationIntensity={1} // XYZ rotation intensity, defaults to 1
                 floatIntensity={0.25} // Up/down float intensity, defaults to 1
               >
-                <group
-                  transform
-                  scale={2.5}
-                  rotation={[Math.PI / 2, 0, 0]}
-                  position={[-0.45, -0.3, -0.1]}
-                >
-                  <mesh
-                    geometry={nodes.Curve.geometry}
-                    material={nodes.Curve.material}
-                  >
+                <group transform scale={2.5} rotation={[Math.PI / 2, 0, 0]} position={[-0.45, -0.3, -0.1]}>
+                  <mesh geometry={nodes.Curve.geometry} material={nodes.Curve.material}>
                     <meshStandardMaterial
                       attach="material"
                       wireframe={false}
@@ -428,11 +350,7 @@ function App() {
               </Float>
             )}
           </Suspense>
-          <OrbitControls
-            minDistance={0.7}
-            maxDistance={1.2}
-            autoRotate={entered}
-          />
+          <OrbitControls minDistance={0.7} maxDistance={1.2} autoRotate={entered} />
         </Canvas>
         <Loader />
       </ThemeProvider>
