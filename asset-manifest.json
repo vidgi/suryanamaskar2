@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/suryanamaskar2/static/css/main.908f71dd.css",
+    "main.css": "/suryanamaskar2/static/css/main.2813a960.css",
     "main.js": "/suryanamaskar2/static/js/main.9e529194.js",
     "static/js/787.97b3905b.chunk.js": "/suryanamaskar2/static/js/787.97b3905b.chunk.js",
     "static/media/title.glb": "/suryanamaskar2/static/media/title.43ce21d1dcaf75fb9445.glb",
     "static/media/MannequinGold.glb": "/suryanamaskar2/static/media/MannequinGold.8f6acc2016b873ad097e.glb",
+    "static/media/ChakraPetchRegular400.ttf": "/suryanamaskar2/static/media/ChakraPetchRegular400.f5a31722ce12b6b11de7.ttf",
     "index.html": "/suryanamaskar2/index.html",
-    "main.908f71dd.css.map": "/suryanamaskar2/static/css/main.908f71dd.css.map",
+    "main.2813a960.css.map": "/suryanamaskar2/static/css/main.2813a960.css.map",
     "main.9e529194.js.map": "/suryanamaskar2/static/js/main.9e529194.js.map",
     "787.97b3905b.chunk.js.map": "/suryanamaskar2/static/js/787.97b3905b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.908f71dd.css",
+    "static/css/main.2813a960.css",
     "static/js/main.9e529194.js"
   ]
 }
